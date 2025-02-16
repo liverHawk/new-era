@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}  <!-- This is the head.html partial -->
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }} <!-- This is the header.html partial -->
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}  
+    <!--
+      This is the main block
+      root -> home.html
+      List Top Level Pages -> list.html
+      Single Page -> single.html
+    -->
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
