@@ -1,0 +1,27 @@
+---
+title: "My Fourth Post"
+date: 2025-02-19
+tags: [ "red" ]
+draft: false
+---
+
+== My Fourth Post
+
+[#hello,ruby]
+----
+require "sinatra"
+puts 'Hello, Ruby!'
+----
+
+=== A Subsection
+
+this is a subsection
+
+ 
+=== Another Subsection
+
+this is another subsection
+
+:stem: latexmath
+
+latexmath:[\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}]

@@ -3,12 +3,33 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   margin: 1rem;
-  max-width: 768px;
 }
 
 header {
   border-bottom: 1px solid #222;
   margin-bottom: 1rem;
+  #page-title > a {
+    color: #000000;
+  }
+}
+
+main {
+  flex-direction: row;
+  display: flex;
+
+  .menu {
+    width: 15vw;
+    padding: 0px 20px 0px 0px;
+  }
+}
+
+.main-content {
+  width: 100vw;
+}
+
+.highlight {
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 footer {

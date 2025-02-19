@@ -2,6 +2,16 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.asciidocExt]
+    extensions = [ "asciidoctor-diagram", "asciidoctor-katex" ]
+    workingFolderCurrent = true
+    [markup.asciidocExt.attributes]
+      my-attribute-name = "my-attribute-value"
+      my-base-url = "http://localhost:1313"
+      source-highlighter = "rouge"
+
 [[menus.main]]
 name = 'Home'
 pageRef = '/'
@@ -21,3 +31,7 @@ weight = 30
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
+
+[security]
+  [security.exec]
+    allow = [ "^asciidoctor$" ]
