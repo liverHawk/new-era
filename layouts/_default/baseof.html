@@ -10,6 +10,7 @@
   <main>
     <div class="menu">
       {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+      {{ partial "toc.html" . }}
     </div>
     <div class="main-content">
       {{ block "main" . }}{{ end }}  

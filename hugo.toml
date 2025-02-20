@@ -4,10 +4,25 @@ title = 'My New Hugo Site'
 
 [markup]
   defaultMarkdownHandler = 'goldmark'
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [[ "\\[", "\\]" ], [ "\\(", "\\)" ], [ "$$", "$$" ]]
+          inline = [[ "\\(", "\\)" ], [ "$", "$" ]]
   [markup.asciidocExt]
-    extensions = [ "asciidoctor-diagram", "asciidoctor-katex" ]
+    extensions = [ "asciidoctor-diagram" ]
+    # preserveTOC = true
     workingFolderCurrent = true
+    # tocLevels = 4
     [markup.asciidocExt.attributes]
+      idprefix = "id-"
+      idseparator = "-"
       my-attribute-name = "my-attribute-value"
       my-base-url = "http://localhost:1313"
       source-highlighter = "rouge"
@@ -31,6 +46,9 @@ weight = 30
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
+
+[params]
+  math = true
 
 [security]
   [security.exec]

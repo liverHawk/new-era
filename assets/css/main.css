@@ -5,7 +5,7 @@ body {
   margin: 1rem;
 }
 
-header {
+body > header {
   border-bottom: 1px solid #222;
   margin-bottom: 1rem;
   #page-title > a {
@@ -18,8 +18,15 @@ main {
   display: flex;
 
   .menu {
-    width: 15vw;
+    width: 20vw;
     padding: 0px 20px 0px 0px;
+
+    .active {
+      font-weight: bold;
+    }
+    aside {
+      width: fit-content;
+    }
   }
 }
 
