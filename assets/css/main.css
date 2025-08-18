@@ -13,6 +13,81 @@ body > header {
   }
 }
 
+/* container mx-auto flex items-center justify-between whitespace-nowrap px-10 py-4 */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: small;
+  font-weight: 500;
+
+  a {
+    color: #64748b;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #1e3a8a;
+    }
+  }
+}
+
+.title-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+  }
+}
+
+/* justify-end gap-4 */
+.header-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.header-search {
+  position: relative;
+  width: 100%;
+  max-width: max-content;
+
+  input {
+    padding-left: 40px;
+    height: max-content;
+  }
+  /* absolute inset-y-0 left-0 flex items-center pl-3 */
+  img {
+    position: absolute;
+    inset-block: 4px;
+    inset-inline-start: 0px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+  }
+}
+
 main {
   flex-direction: row;
   display: flex;
