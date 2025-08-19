@@ -48,3 +48,11 @@ a {
   color: #00e;
   text-decoration: none;
 }
+
+.card {
+  border: #000000 1px solid;
+  margin-block: 1rem;
+  padding: 1rem;
+
+
+}
