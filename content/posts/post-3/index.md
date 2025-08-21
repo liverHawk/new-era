@@ -4,6 +4,7 @@ date = 2023-03-15T11:00:00-07:00
 draft = false
 toc = true
 tags = ['red','green','blue']
+thumbnail = "/posts/post-3/bryce-canyon.jpg"
 +++
 
 # test index

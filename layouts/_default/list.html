@@ -2,7 +2,24 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    {{ if eq .Type "posts" }}
+      {{ if isset .Params "thumbnail" }}
+        <div class="card thumbnail">
+          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+          <div>
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+            <p class="summary">{{ .Summary | strings.Truncate 42 }}</p>
+          </div>
+        </div>
+      {{ else }}
+        <div class="card">
+          <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <p class="summary">{{ .Summary | strings.Truncate 42 }}</p>
+        </div>
+      {{ end }}
+    {{ else }}
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      {{ .Summary | strings.Truncate 42 }}
+    {{ end }}
   {{ end }}
 {{ end }}
