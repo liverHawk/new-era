@@ -10,8 +10,6 @@ draft: false
 :toc:
 :toclevels: 4
 
-== My Fourth Post
-
 [#hello,ruby]
 ----
 require "sinatra"
