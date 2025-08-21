@@ -16,7 +16,7 @@ require "sinatra"
 puts 'Hello, Ruby!'
 ----
 
-=== A Subsection
+== A Subsection
 
 this is a subsection
 

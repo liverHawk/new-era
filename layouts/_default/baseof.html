@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
-  {{ partial "head.html" . }}  <!-- This is the head.html partial -->
+  {{ partial "head.html" . }}
 </head>
 <body>
   <header>
-    {{ partial "header.html" . }} <!-- This is the header.html partial -->
+    {{ partial "header.html" . }}
   </header>
   <main>
-    <div class="menu">
-      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    <!-- フロートメニューボタン -->
+    <button id="menu-float-btn" class="menu-float-btn" aria-label="メニューを開く">
+      &#9776; <!-- ハンバーガーアイコン -->
+    </button>
+    <!-- フロートメニュー本体 -->
+    <div id="float-menu" class="float-menu">
+      <button id="menu-close-btn" class="menu-close-btn" aria-label="閉じる">×</button>
       {{ partial "toc.html" . }}
     </div>
     <div class="main-content">
-      {{ block "main" . }}{{ end }}  
-    <!--
-      This is the main block
-      root -> home.html
-      List Top Level Pages -> list.html
-      Single Page -> single.html
-    -->
+      {{ block "main" . }}{{ end }}
     </div>
   </main>
   <footer>
     {{ partial "footer.html" . }}
   </footer>
-</body>
 </html>

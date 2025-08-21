@@ -140,6 +140,85 @@ article {
   border: #000000 1px solid;
   margin-block: 1rem;
   padding: 1rem;
+}
 
+/* フロートメニューボタン */
+.menu-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
+/* フロートメニュー本体 */
+.float-menu {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  z-index: 1001;
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  min-width: 220px;
+}
+
+/* 閉じるボタン */
+.menu-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #222;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0rem;
+  }
+  .header-left {
+    flex-direction: column;
+    align-self: center;
+    gap: 0px;
+  }
+  .header-right {
+    align-self: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .float-menu {
+    display: block;
+    position: static;
+    bottom: auto;
+    right: auto;
+    z-index: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+  }
+  main {
+    flex-direction: row-reverse;
+    .float-menu {
+      padding: 0rem 1rem;
+    }
+  }
 }

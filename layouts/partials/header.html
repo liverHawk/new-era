@@ -4,19 +4,14 @@
             <img src="/svg/title.svg" alt="Title Logo" />
             <h1><a href="/">Tech Blog</a></h1>
         </div>
-        <nav class="header-nav">
-            <a href="#">Home</a>
-            <a href="#">Articles</a>
-            <a href="#">Categories</a>
-            <a href="#">About</a>
-        </nav>
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     </div>
-    <div class="header-right">
+    <!-- <div class="header-right">
         <div class="header-search">
             <input type="text" placeholder="Search..." />
             <img src="/svg/search.svg" alt="Search Icon" />
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- <h1 id="page-title">
