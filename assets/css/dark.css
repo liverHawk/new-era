@@ -1,0 +1,44 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: white;
+
+        header {
+            border-bottom: 1px solid white;
+        }
+        footer {
+            border-top: 1px solid white;
+        }
+    }
+
+    h2 > a {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .card {
+        border: white 1px solid;
+    }
+
+    .title-logo {
+        img {
+            filter: brightness(0) invert(1);
+        }
+        h1 > a {
+            color: white;
+        }
+    }
+
+    .header-nav > a {
+        color: #e3e2e2;
+    }
+
+    article {
+        background-color: #161616;
+        color: #e3e2e2;
+    }
+
+    ul > li > a {
+        color: #e3e2e2;
+    }
+}

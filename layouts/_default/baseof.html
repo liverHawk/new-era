@@ -8,15 +8,17 @@
     {{ partial "header.html" . }}
   </header>
   <main>
-    <!-- フロートメニューボタン -->
-    <button id="menu-float-btn" class="menu-float-btn" aria-label="メニューを開く">
-      &#9776; <!-- ハンバーガーアイコン -->
-    </button>
-    <!-- フロートメニュー本体 -->
-    <div id="float-menu" class="float-menu">
-      <button id="menu-close-btn" class="menu-close-btn" aria-label="閉じる">×</button>
-      {{ partial "toc.html" . }}
-    </div>
+    {{ if .Params.toc }}
+      <!-- フロートメニューボタン -->
+      <button id="menu-float-btn" class="menu-float-btn" aria-label="メニューを開く">
+        &#9776; <!-- ハンバーガーアイコン -->
+      </button>
+      <!-- フロートメニュー本体 -->
+      <div id="float-menu" class="float-menu">
+        <button id="menu-close-btn" class="menu-close-btn" aria-label="閉じる">×</button>
+        {{ partial "toc.html" . }}
+      </div>
+    {{ end }}
     <div class="main-content">
       {{ block "main" . }}{{ end }}
     </div>

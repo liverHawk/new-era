@@ -31,15 +31,15 @@ body > header {
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: small;
+  font-size:large;
   font-weight: 500;
 
   a {
     color: #64748b;
     transition: color 0.2s ease-in-out;
 
-    &:hover {
-      color: #1e3a8a;
+    &.active {
+      font-weight: bolder;
     }
   }
 }
@@ -121,6 +121,10 @@ main {
 footer {
   border-top: 1px solid #222;
   margin-top: 1rem;
+
+  p {
+    text-align: center;
+  }
 }
 
 a {
@@ -129,17 +133,25 @@ a {
 }
 
 article {
-  background-color: lightgray;
-  border: 1px solid rgba(22, 255, 1, 0.35);
+  background-color: rgb(241, 241, 241);
   border-radius: 5px;
-  box-shadow: 0px 5px 15px 0px rgba(21, 255, 0, 0.35);
+  box-shadow: 0px 5px 15px 0px rgba(164, 165, 164, 0.35);
   padding: 1rem;
+}
+
+li > a {
+  color: #161616;
 }
 
 .card {
   border: #000000 1px solid;
   margin-block: 1rem;
   padding: 1rem;
+}
+
+#TableOfContents ul {
+  /* list-style: none; */
+  padding-left: 20px;
 }
 
 /* フロートメニューボタン */
@@ -171,7 +183,7 @@ article {
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   padding: 1rem;
-  min-width: 220px;
+  width: 50vw;
 }
 
 /* 閉じるボタン */
@@ -218,7 +230,14 @@ article {
   main {
     flex-direction: row-reverse;
     .float-menu {
-      padding: 0rem 1rem;
+      margin-inline: 1rem;
+      padding: 0rem 3rem 0rem 1rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+
+      aside {
+        position: sticky;
+        top: 2rem;
+      }
     }
   }
 }
