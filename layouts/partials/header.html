@@ -1,7 +1,7 @@
 <div id="header">
     <div class="header-left">
         <div class="title-logo">
-            <img src="/svg/title.svg" alt="Title Logo" />
+            <img src="{{ "svg/title.svg" | relURL }}" alt="Title Logo" />
             <h1><a href="/">Tech Blog</a></h1>
         </div>
         {{ partial "menu.html" (dict "menuID" "main" "page" .) }}

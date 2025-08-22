@@ -1,13 +1,13 @@
-name = 'Theme name'
+name = 'New Era'
 license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
-description = 'Theme description'
+licenselink = 'https://github.com/liverHawk/new-era'
+description = 'Blog theme for a modern tech website'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/liverHawk/new-era'
 
 # If you have a running demo of the theme
-demosite = 'https://owner.github.io/repo'
+demosite = 'https://liverHawk.github.io/blog'
 
 # Taxonomy terms
 tags = ['blog', 'company']
