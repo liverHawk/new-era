@@ -1,10 +1,17 @@
 {{ define "main" }}
   <article>
     <h1>{{ .Title }}</h1>
-
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ $dateMachine := .Date | time.Format "2006-01-02" }}
+    {{ $dateHuman := .Date | time.Format "2006-01-02" }}
+    <div class="date-info">
+      {{ $svg := resources.Get "svg/create.svg" | resources.ExecuteAsTemplate "create.svg" (dict "Number" $dateHuman) }}
+      <img class="badge" src="{{ $svg.RelPermalink }}" alt="Create Badge" />
+      {{ with .GitInfo }}
+        {{ $dateUpdate := .CommitDate | time.Format "2006-01-02" }}
+        {{ $svg := resources.Get "svg/update.svg" | resources.ExecuteAsTemplate "update.svg" (dict "Number" $dateUpdate) }}
+        <img class="badge" src="{{ $svg.RelPermalink }}" alt="Update Badge" />
+      {{ end }}
+    </div>
     {{ .Content }}
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   </article>
