@@ -1,0 +1,20 @@
+<svg width="110.00000000000001" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <linearGradient id="b" x2="0" y2="100%">
+  <stop offset="0" stop-color="#fff" stop-opacity="0.7"/>
+  <stop offset="0.1" stop-color="#aaa" stop-opacity="0.1"/>
+  <stop offset="0.9" stop-color="#000" stop-opacity="0.1"/>
+  <stop offset="1" stop-color="#000" stop-opacity="0.3"/>
+ </linearGradient>
+ <g class="layer" display="inline">
+  <title>Layer 1</title>
+  <rect fill="#555" height="20" id="svg_1" rx="3" transform="matrix(1 0 0 1 0 0) translate(-0.0844595 -0.0844595) scale(1.1038 1) translate(0.0844595 0.0844595) matrix(1.04146 0 0 1 0 0)" width="110"/>
+  <rect fill="#4c1" height="20" id="svg_2" rx="3" transform="matrix(1 0 0 1 0 0)" width="71.39" x="54.92" y="0"/>
+  <rect fill="url(#b)" height="20" id="svg_3" rx="3" transform="matrix(1 0 0 1 0 0)" width="126.38" x="0" y="0"/>
+  <g fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" id="svg_4" text-anchor="middle" transform="translate(123.312 2.25958) scale(0.826065 1) translate(-123.312 -2.25958) translate(123.329 2.2601) matrix(1.2042 0 0 1 -138.546 -2.85135)">
+   <text fill="#010101" fill-opacity="0.3" id="svg_5" x="8" y="15">test</text>
+   <text id="svg_6" x="8" y="14">test</text>
+   <text fill="#010101" fill-opacity="0.3" id="svg_7" x="82" y="15">2025-01-01</text>
+   <text id="svg_8" x="82" y="14">2025-01-01</text>
+  </g>
+ </g>
+</svg>
