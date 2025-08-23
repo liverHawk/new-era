@@ -1,0 +1,21 @@
+{{ $ogType := "website" }}
+{{ if eq .Section "posts" }}
+    {{ $ogType := "article" }}
+{{ end }}
+
+{{ $ogDesc := .Params.description | default .Summary }}
+
+<meta property="og:type" content="{{ $ogType }}" />
+<meta property="og:title" content="{{ .Title | default site.Title }}" />
+<meta property="og:description" content="{{ $ogDesc }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+
+{{ $ogImage := partial "head/social-image-url.html" . }}
+{{ if $ogImage }}
+    <meta property="og:image" content="{{ $ogImage }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@liverHawk" />
+    <meta name="twitter:title" content="{{ .Title | default site.Title }}" />
+    <meta name="twitter:description" content="{{ $ogDesc }}" />
+{{ end }}

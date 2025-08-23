@@ -3,3 +3,11 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+
+<!-- if home or content -> ogp -->
+{{ if or .IsHome (eq .Section "posts") }}
+    {{ if not (eq .File nil) }}
+        {{ partial "ogp.html" . }}
+        {{/* fmt.Warnf "Generated OGP for %s" .File */}}
+    {{ end }}
+{{ end }}
