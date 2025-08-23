@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <style>
+    .title{ font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial; font-size:48px; fill:#ffffff;}
+    .bg{ fill: #0b1220;}
+    .meta{ font-size:24px; fill:#9aa4b2;}
+  </style>
+  <rect class="bg" width="1200" height="630"/>
+  <text x="60" y="200" class="title">%s</text>
+  <text x="60" y="560" class="meta">%s</text>
+</svg>

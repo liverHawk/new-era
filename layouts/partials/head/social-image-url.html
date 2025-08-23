@@ -1,0 +1,25 @@
+{{- $page := . -}}
+<!-- remove "_" from file name -->
+{{- $pageFilePath := (replace .File.Path "_" "") -}}
+<!-- remove *.{md,adoc...} from file name -->
+{{- $pageFilePath = (replaceRE `\.[a-zA-Z0-9]+$` "" $pageFilePath) -}}
+{{- $svgName := printf "social-%s.svg" (urlize $pageFilePath) -}}
+<!-- console log $svgName -->
+{{- fmt.Warnf "Generated SVG name: %s" $svgName | safeHTML -}}
+{{- $svgTmpl := printf `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <style>
+    .title{ font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial; font-size:48px; fill:#ffffff;}
+    .bg{ fill: #0b1220;}
+    .meta{ font-size:24px; fill:#9aa4b2;}
+  </style>
+  <rect class="bg" width="1200" height="630"/>
+  <text x="60" y="200" class="title">%s</text>
+  <text x="60" y="560" class="meta">%s</text>
+</svg>` (htmlEscape $page.Title) (htmlEscape $page.Site.Title) -}}
+{{- /* FromString でリソース化しテンプレート実行 */ -}}
+{{- $res := resources.FromString $svgName $svgTmpl | resources.ExecuteAsTemplate $svgName $page -}}
+{{- /* 必要なら最適化や変換：PNGにするために | resources.ToPNG (Hugoには直接ToPNGはない)。
+       一般的にSVGをそのまま公開して og:image に使っても多くのSNSはSVG非推奨或いはサポート外。
+       よってここでは SVG を 1200x630 のまま使うか、外部で PNG 変換する方法を検討。 */ -}}
+{{- /* ここでは簡便のため SVG のパーマリンクを返す */ -}}
+{{- return $res.Permalink -}}
